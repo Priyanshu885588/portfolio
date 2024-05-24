@@ -9,7 +9,20 @@ import { BsStripe } from "react-icons/bs";
 import { SiTensorflow } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import bazzVIdeo from "../assessts/user_auth_BazzarBee.mp4";
+
+const descriptionArray = [
+  "Built a dynamic e-commerce website using React and Redux. Features include a responsive design, real-time updates, seamless routes, advanced search and filter options, an intuitive shopping cart, and a seamless user experience.",
+  "Developed a robust backend for the e-commerce website using Node.js, ensuring efficient server-side operations and scalable performance with asynchronous event-driven architecture.",
+  "Utilized Express.js to create a fast and flexible server framework, enabling smooth API integration and streamlined backend development with its minimalist design.",
+  "Implemented MongoDB for a scalable and flexible database solution, providing efficient data storage and retrieval for the e-commerce platform, with support for complex data structures and high availability.",
+  "Integrated Stripe for secure and seamless payment processing, ensuring a smooth and trustworthy transaction experience for users, with support for various payment methods and currencies.",
+  "Leveraged TensorFlow to incorporate advanced machine learning algorithms, enhancing product recommendations and user experience with intelligent analytics, enabling personalized shopping experiences based on user behavior.",
+  "Built a dynamic e-commerce website using React and Redux. Features include a responsive design, real-time updates, seamless routes, advanced search and filter options, an intuitive shopping cart, and a seamless user experience.",
+];
+
 export const Projects = ({ imageURL, webURL }) => {
+  const [skillDescription, setskillDescription] = useState(false);
+  const [descriptionIndex, setskillDescriptionIndex] = useState(null);
   useEffect(() => {
     const handleKeyDown = (event) => {
       // Check if Ctrl and I keys are pressed
@@ -59,27 +72,81 @@ export const Projects = ({ imageURL, webURL }) => {
       </div>
       <div className="h-full flex items-center hover-big justify-center">
         <div className="h-full w-1/3 flex items-center justify-end py-4">
-          <div className="w-full h-2/3 flex items-end">
+          <div className="w-full h-2/3 flex flex-col items-end gap-3 justify-end">
+            {skillDescription && (
+              <div className="w-[90%] border-l-2 pl-2 appear text-sm text-gray-400 font-light border-gray-400">
+                {descriptionArray[descriptionIndex]}
+              </div>
+            )}
             <ul className="text-white exo flex flex-col gap-2 items-end w-full font-extralight overflow-y-auto h-[60%] pr-2">
-              <li className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-blue-400 flex-row-reverse fade-in">
+              <li
+                className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-blue-400 flex-row-reverse fade-in"
+                onMouseEnter={() => {
+                  setskillDescription((prev) => !prev),
+                    setskillDescriptionIndex(0);
+                }}
+                onMouseLeave={() => setskillDescription((prev) => !prev)}
+              >
                 <FaReact /> React.js
               </li>
-              <li className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-green-400 flex-row-reverse fade-in">
+              <li
+                className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-green-400 flex-row-reverse fade-in"
+                onMouseEnter={() => {
+                  setskillDescription((prev) => !prev),
+                    setskillDescriptionIndex(1);
+                }}
+                onMouseLeave={() => setskillDescription((prev) => !prev)}
+              >
                 <LiaNode /> Node.js
               </li>
-              <li className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-gray-300 flex-row-reverse fade-in">
+              <li
+                className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-gray-300 flex-row-reverse fade-in"
+                onMouseEnter={() => {
+                  setskillDescription((prev) => !prev),
+                    setskillDescriptionIndex(2);
+                }}
+                onMouseLeave={() => setskillDescription((prev) => !prev)}
+              >
                 <SiExpress /> Express.js
               </li>
-              <li className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-green-700 flex-row-reverse fade-in">
+              <li
+                className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-green-700 flex-row-reverse fade-in"
+                onMouseEnter={() => {
+                  setskillDescription((prev) => !prev),
+                    setskillDescriptionIndex(3);
+                }}
+                onMouseLeave={() => setskillDescription((prev) => !prev)}
+              >
                 <SiMongodb /> Mongo DB
               </li>
-              <li className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-purple-500 flex-row-reverse fade-in">
+              <li
+                className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-purple-500 flex-row-reverse fade-in"
+                onMouseEnter={() => {
+                  setskillDescription((prev) => !prev),
+                    setskillDescriptionIndex(4);
+                }}
+                onMouseLeave={() => setskillDescription((prev) => !prev)}
+              >
                 <BsStripe /> Stripe
               </li>
-              <li className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-orange-400 flex-row-reverse fade-in">
+              <li
+                className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-orange-400 flex-row-reverse fade-in"
+                onMouseEnter={() => {
+                  setskillDescription((prev) => !prev),
+                    setskillDescriptionIndex(5);
+                }}
+                onMouseLeave={() => setskillDescription((prev) => !prev)}
+              >
                 <SiTensorflow /> TenserFlow
               </li>
-              <li className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-sky-400 flex-row-reverse fade-in">
+              <li
+                className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-sky-400 flex-row-reverse fade-in"
+                onMouseEnter={() => {
+                  setskillDescription((prev) => !prev),
+                    setskillDescriptionIndex(1);
+                }}
+                onMouseLeave={() => setskillDescription((prev) => !prev)}
+              >
                 <RiTailwindCssFill /> Tailwind CSS
               </li>
             </ul>

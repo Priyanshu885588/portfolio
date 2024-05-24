@@ -80,6 +80,7 @@ body {
 }
 
 .move-right {
+  opacity: 20%;
   width: 5%;
 }
 .move-left {
@@ -100,6 +101,20 @@ body {
   to {
     opacity: 1; /* End with opacity 1 */
     filter: blur(0);
+  }
+}
+
+.appear {
+  opacity: 0;
+  animation: appear 0.5s forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

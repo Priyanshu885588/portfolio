@@ -4,8 +4,7 @@ import { CiCircleChevDown } from "react-icons/ci";
 import BazzarBee from "../assessts/bb.png";
 import BlogWebsite from "../assessts/blbl.png";
 import { Projects } from "./Projects";
-import { LuPanelLeftClose } from "react-icons/lu";
-import { MdOutlineCloseFullscreen } from "react-icons/md";
+import { CiCircleChevRight } from "react-icons/ci";
 export const Home = () => {
   const [entryOfProject, setentryOfProject] = useState(false);
   const [imageURL, setImageURL] = useState("");
@@ -62,11 +61,11 @@ export const Home = () => {
 
         {entryOfProject && (
           <div
-            className="absolute z-50 back h-full w-full top-0 flex justify-end pr-4 items-center border-r cursor-pointer backdrop-blur-lg bg-black/[.6] hover:backdrop-blur-3xl transition-all duration-100"
+            className="absolute z-50 back h-full w-full top-0 flex justify-end pr-4 items-center cursor-pointer bg-black hover:backdrop-blur-3xl transition-all duration-100"
             onClick={() => setentryOfProject((prev) => !prev)}
           >
             <div className="text-white transition-all duration-200">
-              <LuPanelLeftClose className="w-8 h-8 cursor-pointer" />
+              <CiCircleChevRight className="w-10 h-10 cursor-pointer transition-all duration-200 hover:scale-110 opacity-100" />
               {/* <MdOutlineCloseFullscreen /> */}
             </div>
           </div>
