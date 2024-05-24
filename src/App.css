@@ -1,0 +1,133 @@
+#root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.background-image {
+  background-color: #000000;
+
+  background: linear-gradient(-45deg, #00000050, #000000, #79ffeb4c);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.in-animation {
+  animation: in-animation 2s ease backwards;
+}
+
+@keyframes in-animation {
+  0% {
+    left: -600px;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+.drop-animation {
+  position: absolute;
+  top: 0;
+  animation: drop 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes drop {
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+.hover-big {
+  position: relative;
+  animation: slide 1s ease forwards;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    left: -100%;
+  }
+  70% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+    left: 0;
+  }
+}
+
+.move-right {
+  width: 5%;
+}
+.move-left {
+  width: 25%;
+}
+
+.fade-in {
+  opacity: 0;
+  filter: blur(10px);
+  animation: fade-in 1s 1s forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0; /* Start with opacity 0 */
+    filter: blur(20px);
+  }
+  to {
+    opacity: 1; /* End with opacity 1 */
+    filter: blur(0);
+  }
+}
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 2px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.512); /* Color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background: rgba(255, 255, 255, 0.512); /* Color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.394
+  ); /* Color of the scrollbar handle on hover */
+}
