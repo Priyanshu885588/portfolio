@@ -17,10 +17,10 @@ const descriptionArray = [
   "Implemented MongoDB for a scalable and flexible database solution, providing efficient data storage and retrieval for the e-commerce platform, with support for complex data structures and high availability.",
   "Integrated Stripe for secure and seamless payment processing, ensuring a smooth and trustworthy transaction experience for users, with support for various payment methods and currencies.",
   "Leveraged TensorFlow to incorporate advanced machine learning algorithms, enhancing product recommendations and user experience with intelligent analytics, enabling personalized shopping experiences based on user behavior.",
-  "Built a dynamic e-commerce website using React and Redux. Features include a responsive design, real-time updates, seamless routes, advanced search and filter options, an intuitive shopping cart, and a seamless user experience.",
+  "Utilized Tailwind CSS for rapid and efficient UI development, leveraging its utility-first approach to create a highly customizable and responsive design system for the e-commerce website, enabling streamlined styling and consistent user interface elements.",
 ];
 
-export const Projects = ({ imageURL, webURL }) => {
+export const Projects1 = ({ imageURL, webURL }) => {
   const [skillDescription, setskillDescription] = useState(false);
   const [descriptionIndex, setskillDescriptionIndex] = useState(null);
   useEffect(() => {
@@ -56,7 +56,7 @@ export const Projects = ({ imageURL, webURL }) => {
         <img
           src="https://firebasestorage.googleapis.com/v0/b/bazzarbee-192fe.appspot.com/o/HomePage%2Fwired-outline-1186-honeycombs%20(1).gif?alt=media&token=e900967b-3b3e-43d5-a326-39000982c456"
           alt=""
-          className="w-60 h-60 opacity-10"
+          className="w-60 h-60 opacity-50"
         />
       </div> */}
       <div className=" absolute right-4 top-2 -z-10 flex flex-col items-end justify-center fade-in">
@@ -143,7 +143,7 @@ export const Projects = ({ imageURL, webURL }) => {
                 className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-sky-400 flex-row-reverse fade-in"
                 onMouseEnter={() => {
                   setskillDescription((prev) => !prev),
-                    setskillDescriptionIndex(1);
+                    setskillDescriptionIndex(6);
                 }}
                 onMouseLeave={() => setskillDescription((prev) => !prev)}
               >

@@ -3,12 +3,14 @@ import { useState } from "react";
 import { CiCircleChevDown } from "react-icons/ci";
 import BazzarBee from "../assessts/bb.png";
 import BlogWebsite from "../assessts/blbl.png";
-import { Projects } from "./Projects";
+import { Projects1 } from "./Projects1";
+import { Projects2 } from "./Projects2";
 import { CiCircleChevRight } from "react-icons/ci";
 export const Home = () => {
-  const [entryOfProject, setentryOfProject] = useState(false);
+  const [entryOfProject, setentryOfProject] = useState(0);
   const [imageURL, setImageURL] = useState("");
   const [webURL, setwebURL] = useState("");
+  const [imageHover, setimageHover] = useState(false);
 
   return (
     <div className=" h-screen w-screen background-image border-gray-700 flex">
@@ -26,43 +28,53 @@ export const Home = () => {
             jects
           </div>
           <div
-            className="p-5 cursor-pointer"
+            className="p-5 cursor-pointer h-[30%]"
             onClick={() => (
               setImageURL(
                 "https://firebasestorage.googleapis.com/v0/b/blog-website-584fc.appspot.com/o/bb.jpg?alt=media&token=2409bbde-50dc-402e-8ecc-67822f22f130"
               ),
-              setentryOfProject((prev) => !prev),
+              setentryOfProject(1),
               setwebURL("https://bazzar-bee.vercel.app")
             )}
           >
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/blog-website-584fc.appspot.com/o/bb.jpg?alt=media&token=2409bbde-50dc-402e-8ecc-67822f22f130"
-              className="w-full h-full border-y p-2 hover:scale-105 transition-all duration-300"
-              alt=""
-            />
+            <div className="w-full h-full border-y p-2 hover:scale-105 transition-all duration-300">
+              <div
+                className="w-full h-full flex items-end"
+                style={{
+                  backgroundImage: `url("https://firebasestorage.googleapis.com/v0/b/blog-website-584fc.appspot.com/o/bb.jpg?alt=media&token=2409bbde-50dc-402e-8ecc-67822f22f130")`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              ></div>
+            </div>
           </div>
           <div
-            className="p-5 cursor-pointer"
+            className="p-5 cursor-pointer h-[30%]"
             onClick={() => (
               setImageURL(
-                "https://firebasestorage.googleapis.com/v0/b/blog-website-584fc.appspot.com/o/blbl.png?alt=media&token=b6fc619e-6624-4f58-96f0-7f5a4b0efc40"
+                "https://firebasestorage.googleapis.com/v0/b/blog-website-584fc.appspot.com/o/Screenshot%20(54).png?alt=media&token=65f46a8f-2b18-49f4-a09c-1feafeb3cacd"
               ),
-              setentryOfProject((prev) => !prev),
+              setentryOfProject(2),
               setwebURL("https://blog-website-liart.vercel.app")
             )}
           >
-            <img
-              src={BlogWebsite}
-              className="w-full h-full border-y p-2 hover:scale-105 transition-all duration-300 "
-              alt=""
-            />
+            <div className="w-full h-full border-y p-2 hover:scale-105 transition-all duration-300">
+              <div
+                className="w-full h-full flex items-end "
+                style={{
+                  backgroundImage: `url("https://firebasestorage.googleapis.com/v0/b/blog-website-584fc.appspot.com/o/Screenshot%20(54).png?alt=media&token=65f46a8f-2b18-49f4-a09c-1feafeb3cacd")`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              ></div>
+            </div>
           </div>
         </div>
 
-        {entryOfProject && (
+        {entryOfProject > 0 && (
           <div
             className="absolute z-50 back h-full w-full top-0 flex justify-end pr-4 items-center cursor-pointer bg-black hover:backdrop-blur-3xl transition-all duration-100"
-            onClick={() => setentryOfProject((prev) => !prev)}
+            onClick={() => setentryOfProject(0)}
           >
             <div className="text-white transition-all duration-200">
               <CiCircleChevRight className="w-10 h-10 cursor-pointer transition-all duration-200 hover:scale-110 opacity-100" />
@@ -72,7 +84,12 @@ export const Home = () => {
         )}
       </div>
       <div className="w-full h-full">
-        {entryOfProject && <Projects imageURL={imageURL} webURL={webURL} />}
+        {entryOfProject == 1 && (
+          <Projects1 imageURL={imageURL} webURL={webURL} />
+        )}
+        {entryOfProject == 2 && (
+          <Projects2 imageURL={imageURL} webURL={webURL} />
+        )}
       </div>
     </div>
   );
