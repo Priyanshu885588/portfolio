@@ -5,7 +5,9 @@ import BazzarBee from "../assessts/bb.png";
 import BlogWebsite from "../assessts/blbl.png";
 import { Projects1 } from "./Projects1";
 import { Projects2 } from "./Projects2";
+import { Projects3 } from "./Projects3";
 import { CiCircleChevRight } from "react-icons/ci";
+import Terminal from "./Terminal";
 export const Home = () => {
   const [entryOfProject, setentryOfProject] = useState(0);
   const [imageURL, setImageURL] = useState("");
@@ -52,9 +54,30 @@ export const Home = () => {
             className="p-5 cursor-pointer h-[30%]"
             onClick={() => (
               setImageURL(
-                "https://firebasestorage.googleapis.com/v0/b/blog-website-584fc.appspot.com/o/Screenshot%20(54).png?alt=media&token=65f46a8f-2b18-49f4-a09c-1feafeb3cacd"
+                "https://firebasestorage.googleapis.com/v0/b/blog-website-584fc.appspot.com/o/Screenshot%202024-05-26%20021257.png?alt=media&token=ed51ce4f-3bae-4019-a747-5ce0af4d93ca"
               ),
               setentryOfProject(2),
+              setwebURL("https://main.d32nmi8aqac813.amplifyapp.com/")
+            )}
+          >
+            <div className="w-full h-full border-y p-2 hover:scale-105 transition-all duration-300">
+              <div
+                className="w-full h-full flex items-end "
+                style={{
+                  backgroundImage: `url("https://firebasestorage.googleapis.com/v0/b/blog-website-584fc.appspot.com/o/Screenshot%202024-05-26%20021257.png?alt=media&token=ed51ce4f-3bae-4019-a747-5ce0af4d93ca")`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              ></div>
+            </div>
+          </div>
+          <div
+            className="p-5 cursor-pointer h-[30%]"
+            onClick={() => (
+              setImageURL(
+                "https://firebasestorage.googleapis.com/v0/b/blog-website-584fc.appspot.com/o/Screenshot%20(54).png?alt=media&token=65f46a8f-2b18-49f4-a09c-1feafeb3cacd"
+              ),
+              setentryOfProject(3),
               setwebURL("https://blog-website-liart.vercel.app")
             )}
           >
@@ -90,6 +113,14 @@ export const Home = () => {
         {entryOfProject == 2 && (
           <Projects2 imageURL={imageURL} webURL={webURL} />
         )}
+        {entryOfProject == 3 && (
+          <Projects3 imageURL={imageURL} webURL={webURL} />
+        )}
+        <div className="h-full w-full flex items-center justify-center">
+          <div className="h-[55%] w-[60%] overflow-hidden">
+            <Terminal />
+          </div>
+        </div>
       </div>
     </div>
   );

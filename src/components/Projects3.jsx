@@ -4,27 +4,19 @@ import BlogWebsite from "../assessts/blbl.png";
 import { FaReact } from "react-icons/fa";
 import { LiaNode } from "react-icons/lia";
 import { SiExpress } from "react-icons/si";
-import { GrMysql } from "react-icons/gr";
-import { SiAmazonrds } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiAmazons3 } from "react-icons/si";
-import { SiAwsamplify } from "react-icons/si";
-import { FaGithub } from "react-icons/fa";
 import bazzVIdeo from "../assessts/user_auth_BazzarBee.mp4";
 
 const descriptionArray = [
-  "Crafted a student document upload platform using React, facilitating seamless document submission, real-time updates, and advanced search functionalities for a user-friendly experience.",
+  "Crafted a dynamic blog platform using React and Redux, offering seamless navigation, real-time updates, and advanced search capabilities for a smooth user experience.",
   "Developed a robust Node.js backend, ensuring efficient server-side operations and scalability with asynchronous event-driven architecture.",
   "Utilized Express.js for fast API integration and streamlined backend development with its minimalist design.",
-  "Implemented MySQL for structured data storage, ensuring reliability and scalability.",
-  "Integrated Amazon RDS for efficient relational database management, enhancing data security and performance.",
-  "Utilized Amazon S3 for scalable object storage, ensuring reliable data storage and retrieval for uploaded documents.",
-  "Leveraged Amazon Amplify for seamless deployment and scaling of the document upload platform, ensuring high availability and performance.",
-  "Utilized Github for version control and collaborative development, facilitating seamless code management and team collaboration.",
+  "Implemented MongoDB for scalable data storage, providing efficient retrieval and support for complex structures.",
   "Utilized Tailwind CSS for responsive UI development, creating a highly customizable design system.",
 ];
 
-export const Projects2 = ({ imageURL, webURL }) => {
+export const Projects3 = ({ imageURL, webURL }) => {
   const [skillDescription, setskillDescription] = useState(false);
   const [descriptionIndex, setskillDescriptionIndex] = useState(null);
   useEffect(() => {
@@ -55,13 +47,13 @@ export const Projects2 = ({ imageURL, webURL }) => {
     <div className="text-white h-full w-full">
       <div className=" absolute right-4 top-2 -z-10 flex flex-col items-end justify-center fade-in">
         <h1 className="uppercase 2xl:text-[9rem] lg:text-[7rem] md:text-[4rem] sm:text-[2rem] oswald text-yellow-400 h-fit m-0 p-0">
-          RNSIT DOCS
+          Chronicle
         </h1>
         <p className="w-1/2 montserrat text-left text-xs md:text-base">
-          Upload Smarter, Connect Better:
+          Embark on Tech Tours,
         </p>
         <p className="w-1/2 montserrat text-left md:text-sm text-xs">
-          Your Documents, Your Success!
+          Explore Life, Engage in Conversations
         </p>
       </div>
       <div className="h-full flex items-center hover-big justify-center">
@@ -104,61 +96,20 @@ export const Projects2 = ({ imageURL, webURL }) => {
                 <SiExpress /> Express.js
               </li>
               <li
-                className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-cyan-700 flex-row-reverse fade-in font-normal"
+                className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-green-700 flex-row-reverse fade-in"
                 onMouseEnter={() => {
                   setskillDescription((prev) => !prev),
                     setskillDescriptionIndex(3);
                 }}
                 onMouseLeave={() => setskillDescription((prev) => !prev)}
               >
-                <GrMysql /> My SQL
-              </li>
-              <li
-                className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-yellow-400 flex-row-reverse fade-in"
-                onMouseEnter={() => {
-                  setskillDescription((prev) => !prev),
-                    setskillDescriptionIndex(4);
-                }}
-                onMouseLeave={() => setskillDescription((prev) => !prev)}
-              >
-                <SiAmazonrds /> Amazon RDS
-              </li>
-              <li
-                className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-green-400 flex-row-reverse fade-in"
-                onMouseEnter={() => {
-                  setskillDescription((prev) => !prev),
-                    setskillDescriptionIndex(5);
-                }}
-                onMouseLeave={() => setskillDescription((prev) => !prev)}
-              >
-                <SiAmazons3 className="bg-green-700 rounded-sm text-white p-0.5" />{" "}
-                Amazon S3
-              </li>
-              <li
-                className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-red-400 flex-row-reverse fade-in"
-                onMouseEnter={() => {
-                  setskillDescription((prev) => !prev),
-                    setskillDescriptionIndex(6);
-                }}
-                onMouseLeave={() => setskillDescription((prev) => !prev)}
-              >
-                <SiAwsamplify /> Amazon Amplify
-              </li>
-              <li
-                className="flex items-center gap-2 text-lg hover:text-gray-400 cursor-pointer text-white flex-row-reverse fade-in"
-                onMouseEnter={() => {
-                  setskillDescription((prev) => !prev),
-                    setskillDescriptionIndex(7);
-                }}
-                onMouseLeave={() => setskillDescription((prev) => !prev)}
-              >
-                <FaGithub /> Github
+                <SiMongodb /> Mongo DB
               </li>
               <li
                 className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-sky-400 flex-row-reverse fade-in"
                 onMouseEnter={() => {
                   setskillDescription((prev) => !prev),
-                    setskillDescriptionIndex(8);
+                    setskillDescriptionIndex(4);
                 }}
                 onMouseLeave={() => setskillDescription((prev) => !prev)}
               >
@@ -191,10 +142,11 @@ export const Projects2 = ({ imageURL, webURL }) => {
         <div className="h-full w-1/3 flex items-end">
           <div className="h-fit py-2 px-2 ">
             <p className="montserrat font-thin w-4/5 relative text-left fade-in pb-4 2xl:text-[1rem] lg:text-[0.9rem] md:text-[1rem] sm:text-[0.5rem]">
-              Discover a seamless document upload system for college projects.
-              Students upload documents, admins manage records and categories.
-              Join us for fostering efficient project management and academic
-              collaboration!
+              Experience a dynamic blog platform designed for discovery and
+              connection. Explore diverse content, engage with others, and share
+              your insights. Join us and embark on your journey of exploration
+              and growth, as you contribute to and learn from our vibrant
+              community!
             </p>
           </div>
         </div>

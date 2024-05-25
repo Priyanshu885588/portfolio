@@ -117,24 +117,28 @@ body {
     opacity: 1;
   }
 }
-
+.my-terminal {
+  background-color: #c1c1c1e1; /* Dark background */
+  color: #abb2bf; /* Light foreground color */
+  border: 1px solid #434a54; /* Optional border */
+}
 /* For WebKit browsers (Chrome, Safari, Edge) */
 
 /* For WebKit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 1px;
   height: 6px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.512); /* Color of the track */
+  background: rgba(255, 200, 0, 0.213); /* Color of the track */
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 0px;
-  background: rgba(255, 255, 255, 0.512); /* Color of the scrollbar handle */
+  background: rgba(255, 255, 255, 0.842); /* Color of the scrollbar handle */
 }
 
 /* Handle on hover */
