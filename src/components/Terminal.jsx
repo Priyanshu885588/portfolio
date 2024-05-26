@@ -5,7 +5,7 @@ import { ReactTerminal } from "react-terminal";
 const Terminal = ({ handleSkills, handleContacts }) => {
   const commands = {
     help: () => (
-      <span className="text-base fira">
+      <span className="md:text-base text-xs fira">
         Available commands:
         <br />- <b>skills</b>: See a list of my technical skills and expertise.
         <br />- <b>projects</b>: Get an overview of some of my key projects.
@@ -23,7 +23,7 @@ const Terminal = ({ handleSkills, handleContacts }) => {
         handleSkills(false);
       }, 15000),
       (
-        <span className="text-base fira">
+        <span className="md:text-base text-xs fira">
           My technical skills include:
           <br />
           - Programming Languages: JavaScript, C++, C, Java, Python
@@ -40,7 +40,7 @@ const Terminal = ({ handleSkills, handleContacts }) => {
       )
     ),
     projects: () => (
-      <span className="text-base fira">
+      <span className="md:text-base text-xs fira">
         Here are some of my key projects:
         <br />
         1. <b>BazzarBee-[E-commerce platform]</b>
@@ -60,7 +60,7 @@ const Terminal = ({ handleSkills, handleContacts }) => {
     contact: () => (
       handleContacts(),
       (
-        <span className="text-base fira">
+        <span className="md:text-base text-xs fira">
           You can reach me at:
           <a href="mailto:priyanshumandani978@gmail.com"> gmail</a>
           <br />- LinkedIn:{" "}
@@ -84,7 +84,7 @@ const Terminal = ({ handleSkills, handleContacts }) => {
       )
     ),
     education: () => (
-      <span className="text-base fira">
+      <span className="md:text-base text-xs fira">
         My educational background:
         <br />
         - B.E in Computer Science & Engineering, RNSIT
@@ -95,7 +95,7 @@ const Terminal = ({ handleSkills, handleContacts }) => {
       </span>
     ),
     experience: () => (
-      <span className="text-base fira">
+      <span className="md:text-base text-xs fira">
         My professional experience includes:
         <br />
         - Software Engineer at Company A (Year - Year): Brief description of
@@ -107,7 +107,7 @@ const Terminal = ({ handleSkills, handleContacts }) => {
       </span>
     ),
     interests: () => (
-      <span className="text-base fira">
+      <span className="md:text-base text-xs fira">
         Outside of work, I enjoy:
         <br />
         - Traveling and exploring new cultures
@@ -123,7 +123,7 @@ const Terminal = ({ handleSkills, handleContacts }) => {
   };
 
   const welcomeMessage = (
-    <span className="fira">
+    <span className="fira md:text-base text-xs">
       Priyanshu here, driven by a passion for developing innovative solutions
       that create a meaningful and positive impact.
       <br />
@@ -134,7 +134,9 @@ const Terminal = ({ handleSkills, handleContacts }) => {
   );
 
   const prompt = (
-    <span className="fira text-yellow-700">Priyanshu's portfolio@</span>
+    <span className="fira text-yellow-700 md:text-base text-xs">
+      Priyanshu's portfolio@
+    </span>
   );
   return (
     <ReactTerminal

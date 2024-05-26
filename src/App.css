@@ -32,7 +32,7 @@ body {
 }
 
 .in-animation {
-  animation: in-animation 2s ease backwards;
+  animation: in-animation 1s ease backwards;
 }
 
 @keyframes in-animation {
@@ -77,12 +77,26 @@ body {
   }
 }
 
-.move-right {
-  opacity: 20%;
-  width: 5%;
+@media only screen and (max-width: 750px) {
+  .move-right {
+    top: 0;
+    width: 100%;
+    position: absolute;
+  }
+  .move-left {
+    top: 0;
+    width: 100%;
+    position: absolute;
+  }
 }
-.move-left {
-  width: 25%;
+@media only screen and (min-width: 750px) {
+  .move-right {
+    opacity: 20%;
+    width: 5%;
+  }
+  .move-left {
+    width: 25%;
+  }
 }
 
 .fade-in {

@@ -8,6 +8,7 @@ import { SiMongodb } from "react-icons/si";
 import { BsStripe } from "react-icons/bs";
 import { SiTensorflow } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
+import { IoHomeOutline } from "react-icons/io5";
 import bazzVIdeo from "../assessts/user_auth_BazzarBee.mp4";
 
 const descriptionArray = [
@@ -20,7 +21,7 @@ const descriptionArray = [
   "Utilized Tailwind CSS for rapid and efficient UI development, leveraging its utility-first approach to create a highly customizable and responsive design system for the e-commerce website, enabling streamlined styling and consistent user interface elements.",
 ];
 
-export const Projects1 = ({ imageURL, webURL }) => {
+export const Projects1 = ({ imageURL, webURL, handleHomepage }) => {
   const [skillDescription, setskillDescription] = useState(false);
   const [descriptionIndex, setskillDescriptionIndex] = useState(null);
   useEffect(() => {
@@ -52,33 +53,32 @@ export const Projects1 = ({ imageURL, webURL }) => {
   };
   return (
     <div className="text-white h-full w-full">
-      {/* <div className=" absolute left-[15%] top-2 -z-10 flex flex-col items-end justify-center fade-in">
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/bazzarbee-192fe.appspot.com/o/HomePage%2Fwired-outline-1186-honeycombs%20(1).gif?alt=media&token=e900967b-3b3e-43d5-a326-39000982c456"
-          alt=""
-          className="w-60 h-60 opacity-50"
-        />
-      </div> */}
-      <div className=" absolute right-4 top-2 -z-10 flex flex-col items-end justify-center fade-in">
-        <h1 className="uppercase 2xl:text-[9rem] lg:text-[7rem] md:text-[4rem] sm:text-[2rem] oswald text-yellow-400 h-fit m-0 p-0">
+      <button
+        className="text-white md:hidden block absolute top-2 left-2 z-50"
+        onClick={() => handleHomepage()}
+      >
+        <IoHomeOutline className="w-6 h-6" />
+      </button>
+      <div className=" absolute md:right-4 md:top-2 top-32 right-2 -z-10 flex flex-col items-end justify-center fade-in">
+        <h1 className="uppercase 2xl:text-[9rem] lg:text-[7rem] md:text-[4rem] text-[2rem] oswald text-yellow-400 h-fit m-0 p-0">
           BAZZARBEE
         </h1>
-        <p className="w-1/2 montserrat text-left text-xs md:text-base">
+        <p className="md:w-1/2 w-2/3 montserrat text-left text-xs md:text-base">
           Buzzing with Deals,
         </p>
-        <p className="w-1/2 montserrat text-left md:text-sm text-xs">
+        <p className="md:w-1/2 w-2/3 montserrat text-left md:text-sm text-xs">
           Your One-Stop Hive - BazzarBee!
         </p>
       </div>
-      <div className="h-full flex items-center hover-big justify-center">
-        <div className="h-full w-1/3 flex items-center justify-end py-4">
-          <div className="w-full h-2/3 flex flex-col items-end gap-3 justify-end">
+      <div className="h-full flex md:flex-row flex-col items-center hover-big justify-center">
+        <div className="md:h-full md:w-1/3 h-1/3 w-full flex items-center md:justify-end justify-start py-4">
+          <div className="md:w-full md:h-2/3 w-fit h-[100%] flex flex-col md:items-end items-start md:gap-3 gap-1 justify-end">
             {skillDescription && (
               <div className="w-[90%] border-l-2 pl-2 appear text-sm text-gray-400 font-light border-gray-400">
                 {descriptionArray[descriptionIndex]}
               </div>
             )}
-            <ul className="text-white exo flex flex-col gap-2 items-end w-full font-extralight overflow-y-auto h-[60%] pr-2">
+            <ul className="text-white exo flex flex-col md:gap-2 gap-0 items-end w-full font-extralight overflow-y-auto h-[60%] pr-2">
               <li
                 className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-blue-400 flex-row-reverse fade-in"
                 onMouseEnter={() => {
@@ -152,7 +152,7 @@ export const Projects1 = ({ imageURL, webURL }) => {
             </ul>
           </div>
         </div>
-        <div className="h-2/3 w-2/3 overflow-y-scroll overflow-x-hidden relative scrollable-div">
+        <div className="md:h-2/3 md:w-2/3 h-1/3 w-full overflow-y-scroll overflow-x-hidden relative scrollable-div">
           <img
             src={imageURL}
             className="h-full p-3 transition-all duration-300 cursor-pointer border-r"
@@ -173,9 +173,9 @@ export const Projects1 = ({ imageURL, webURL }) => {
           </video>
         </div>
 
-        <div className="h-full w-1/3 flex items-end">
+        <div className="md:h-full md:w-1/3 h-1/3 w-full flex md:items-end items-start">
           <div className="h-fit py-2 px-2 ">
-            <p className="montserrat font-thin w-4/5 relative text-left fade-in pb-4 2xl:text-[1rem] lg:text-[0.9rem] md:text-[1rem] sm:text-[0.5rem]">
+            <p className="montserrat font-thin md:w-4/5 relative text-left fade-in pb-4 2xl:text-[1rem] lg:text-[0.9rem] md:text-[1rem] text-[0.8rem]">
               An innovative e-commerce platform designed to elevate your online
               shopping experience. Seamlessly integrating advanced features, it
               offers secure transactions, personalized product recommendations,
@@ -185,7 +185,7 @@ export const Projects1 = ({ imageURL, webURL }) => {
           </div>
         </div>
       </div>
-      <footer className="w-full absolute bottom-0 h-10 p-2 px-4 mb-2">
+      <footer className="w-full absolute bottom-0 h-10 p-2 px-4 mb-2 hidden md:block">
         <button className="text-white py-1 px-4 border-2 rounded-full text-sm font-mono opacity-40">
           Ctrl + i
         </button>

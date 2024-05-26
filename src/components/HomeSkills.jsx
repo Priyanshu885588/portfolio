@@ -9,9 +9,9 @@ import { FaGithub } from "react-icons/fa";
 import { FaAws } from "react-icons/fa";
 export const HomeSkills = () => {
   return (
-    <ul className="text-white exo flex flex-col gap-2 items-end justify-center w-full font-extralight overflow-y-auto h-[100%] pr-2 fade-in1">
+    <ul className="text-white exo flex md:flex-col flex-row flex-wrap  gap-2 md:items-end md:justify-center justify-end items-center w-full font-extralight overflow-y-auto h-[100%] pr-2 fade-in1">
       <li
-        className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-blue-400 flex-row-reverse "
+        className="flex items-center gap-2 md:text-lg text-sm hover:text-gray-100 cursor-pointer text-blue-400 flex-row-reverse md:m-0 mt-2"
         onMouseEnter={() => {
           setskillDescription((prev) => !prev), setskillDescriptionIndex(0);
         }}
@@ -25,7 +25,7 @@ export const HomeSkills = () => {
         </div>
       </li>
       <li
-        className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-green-400 flex-row-reverse "
+        className="flex items-center gap-2 md:text-lg text-sm hover:text-gray-100 cursor-pointer text-green-400 flex-row-reverse "
         onMouseEnter={() => {
           setskillDescription((prev) => !prev), setskillDescriptionIndex(1);
         }}
@@ -39,7 +39,7 @@ export const HomeSkills = () => {
         </div>
       </li>
       <li
-        className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-gray-300 flex-row-reverse "
+        className="flex items-center gap-2 md:text-lg text-sm hover:text-gray-100 cursor-pointer text-gray-300 flex-row-reverse "
         onMouseEnter={() => {
           setskillDescription((prev) => !prev), setskillDescriptionIndex(2);
         }}
@@ -53,7 +53,7 @@ export const HomeSkills = () => {
         </div>
       </li>
       <li
-        className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-green-700 flex-row-reverse "
+        className="flex items-center gap-2 md:text-lg text-sm hover:text-gray-100 cursor-pointer text-green-700 flex-row-reverse "
         onMouseEnter={() => {
           setskillDescription((prev) => !prev), setskillDescriptionIndex(3);
         }}
@@ -67,7 +67,7 @@ export const HomeSkills = () => {
         </div>
       </li>
       <li
-        className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-cyan-700 flex-row-reverse  font-normal"
+        className="flex items-center gap-2 md:text-lg text-sm hover:text-gray-100 cursor-pointer text-cyan-700 flex-row-reverse  font-normal"
         onMouseEnter={() => {
           setskillDescription((prev) => !prev), setskillDescriptionIndex(3);
         }}
@@ -81,7 +81,7 @@ export const HomeSkills = () => {
         </div>
       </li>
       <li
-        className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-yellow-400 flex-row-reverse "
+        className="flex items-center gap-2 md:text-lg text-sm hover:text-gray-100 cursor-pointer text-yellow-400 flex-row-reverse "
         onMouseEnter={() => {
           setskillDescription((prev) => !prev), setskillDescriptionIndex(5);
         }}
@@ -96,7 +96,7 @@ export const HomeSkills = () => {
         </div>
       </li>
       <li
-        className="flex items-center gap-2 text-lg hover:text-gray-400 cursor-pointer text-white flex-row-reverse "
+        className="flex items-center gap-2 md:text-lg text-sm hover:text-gray-400 cursor-pointer text-white flex-row-reverse "
         onMouseEnter={() => {
           setskillDescription((prev) => !prev), setskillDescriptionIndex(7);
         }}
@@ -113,7 +113,7 @@ export const HomeSkills = () => {
         </div>
       </li>
       <li
-        className="flex items-center gap-2 text-lg hover:text-gray-100 cursor-pointer text-orange-400 flex-row-reverse "
+        className="flex items-center gap-2 md:text-lg text-sm hover:text-gray-100 cursor-pointer text-orange-400 flex-row-reverse "
         onMouseEnter={() => {
           setskillDescription((prev) => !prev), setskillDescriptionIndex(5);
         }}
