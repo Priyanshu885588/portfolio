@@ -6,14 +6,29 @@ import BlogWebsite from "../assessts/blbl.png";
 import { Projects1 } from "./Projects1";
 import { Projects2 } from "./Projects2";
 import { Projects3 } from "./Projects3";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
+import { LuInstagram } from "react-icons/lu";
+import { BsTwitterX } from "react-icons/bs";
+import { SiGmail } from "react-icons/si";
 import { CiCircleChevRight } from "react-icons/ci";
+
 import Terminal from "./Terminal";
+import { HomeSkills } from "./HomeSkills";
 export const Home = () => {
   const [entryOfProject, setentryOfProject] = useState(0);
   const [imageURL, setImageURL] = useState("");
   const [webURL, setwebURL] = useState("");
   const [imageHover, setimageHover] = useState(false);
+  const [showSkills, setShowSkills] = useState(false);
+  const [showContactOptions, setShowContactOptions] = useState(false);
 
+  const handleSkills = (arg) => {
+    setShowSkills((prev) => arg);
+  };
+  const handleContacts = () => {
+    setShowContactOptions((prev) => true);
+  };
   return (
     <div className=" h-screen w-screen background-image border-gray-700 flex">
       <div
@@ -75,7 +90,7 @@ export const Home = () => {
             className="p-5 cursor-pointer h-[30%]"
             onClick={() => (
               setImageURL(
-                "https://firebasestorage.googleapis.com/v0/b/blog-website-584fc.appspot.com/o/Screenshot%20(54).png?alt=media&token=65f46a8f-2b18-49f4-a09c-1feafeb3cacd"
+                "https://firebasestorage.googleapis.com/v0/b/blog-website-584fc.appspot.com/o/blbl.png?alt=media&token=b6fc619e-6624-4f58-96f0-7f5a4b0efc40"
               ),
               setentryOfProject(3),
               setwebURL("https://blog-website-liart.vercel.app")
@@ -85,7 +100,7 @@ export const Home = () => {
               <div
                 className="w-full h-full flex items-end "
                 style={{
-                  backgroundImage: `url("https://firebasestorage.googleapis.com/v0/b/blog-website-584fc.appspot.com/o/Screenshot%20(54).png?alt=media&token=65f46a8f-2b18-49f4-a09c-1feafeb3cacd")`,
+                  backgroundImage: `url("https://firebasestorage.googleapis.com/v0/b/blog-website-584fc.appspot.com/o/blbl.png?alt=media&token=b6fc619e-6624-4f58-96f0-7f5a4b0efc40")`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -117,8 +132,66 @@ export const Home = () => {
           <Projects3 imageURL={imageURL} webURL={webURL} />
         )}
         <div className="h-full w-full flex items-center justify-center">
-          <div className="h-[55%] w-[60%] overflow-hidden">
-            <Terminal />
+          <div className="h-full w-[20%] "></div>
+          <div className="h-[100%] w-[60%] overflow-hidden flex flex-col items-center justify-between">
+            <div className="w-full h-[20%] flex gap-6 justify-center relative">
+              {showContactOptions && (
+                <>
+                  <div className="h-full w-1/6 flex flex-col items-center relative -top-32 drop-animation">
+                    <div className="w-[0.5px] h-1/2 bg-white"></div>
+                    <a
+                      href="https://github.com/Priyanshu885588"
+                      target="_blank"
+                    >
+                      <FaGithub className="text-white w-7 h-7 hover:animate-pulse" />
+                    </a>
+                  </div>
+                  <div className="h-full w-1/6 flex flex-col items-center relative -top-32 drop-animation">
+                    <div className="w-[0.5px] h-1/2 bg-white"></div>
+                    <a
+                      href="https://www.linkedin.com/in/priyanshu-mandani-835553309/"
+                      target="_blank"
+                    >
+                      <FaLinkedin className="text-blue-400 w-7 h-7 hover:animate-pulse" />
+                    </a>
+                  </div>
+                  <div className="h-full w-1/6 flex flex-col items-center relative -top-32 drop-animation">
+                    <div className="w-[0.5px] h-1/2 bg-white"></div>
+                    <a
+                      href="https://www.instagram.com/priyanshu__11/"
+                      target="_blank"
+                    >
+                      <LuInstagram className="text-white w-7 h-7 hover:animate-pulse bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-0.5" />
+                    </a>
+                  </div>
+                  <div className="h-full w-1/6 flex flex-col items-center relative -top-32 drop-animation">
+                    <div className="w-[0.5px] h-1/2 bg-white"></div>
+                    <a href="https://x.com/M16946Priyanshu" target="_blank">
+                      <BsTwitterX className="text-white w-7 h-7 hover:animate-pulse p-0.5" />
+                    </a>
+                  </div>
+                  <div className="h-full w-1/6 flex flex-col items-center relative -top-32 drop-animation">
+                    <div className="w-[0.5px] h-1/2 bg-white"></div>
+                    <a
+                      href="mailto:priyanshumandani978@gmail.com"
+                      target="_blank"
+                    >
+                      <SiGmail className="text-red-500 w-7 h-7 hover:animate-pulse" />
+                    </a>
+                  </div>
+                </>
+              )}
+            </div>
+            <div className="h-[55%] w-full">
+              <Terminal
+                handleSkills={handleSkills}
+                handleContacts={handleContacts}
+              />
+            </div>
+            <div className="w-full h-[20%] "></div>
+          </div>
+          <div className="h-full w-[20%] flex items-center">
+            {showSkills && <HomeSkills />}
           </div>
         </div>
       </div>

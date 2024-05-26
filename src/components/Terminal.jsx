@@ -1,7 +1,8 @@
 import React from "react";
+import { FaGithub } from "react-icons/fa";
 import { ReactTerminal } from "react-terminal";
 
-const Terminal = () => {
+const Terminal = ({ handleSkills, handleContacts }) => {
   const commands = {
     help: () => (
       <span className="text-base fira">
@@ -10,64 +11,83 @@ const Terminal = () => {
         <br />- <b>projects</b>: Get an overview of some of my key projects.
         <br />- <b>contact</b>: Find out how to get in touch with me.
         <br />- <b>education</b>: View my educational background.
-        <br />- <b>experience</b>: Learn about my professional experience.
+        {/* <br />- <b>experience</b>: Learn about my professional experience. */}
         <br />- <b>interests</b>: Discover my interests and hobbies outside of
         work.
         <br />
       </span>
     ),
     skills: () => (
-      <span className="text-base fira">
-        My technical skills include:
-        <br />
-        - Programming Languages: JavaScript, Python, Java, C++
-        <br />
-        - Frameworks: React, Node.js, Express, Django
-        <br />
-        - Tools: Git, Docker, Jenkins, AWS
-        <br />
-        - Databases: MongoDB, MySQL, PostgreSQL
-        <br />
-        - Others: Agile methodologies, Test-driven development
-        <br />
-      </span>
+      handleSkills(true),
+      setTimeout(() => {
+        handleSkills(false);
+      }, 15000),
+      (
+        <span className="text-base fira">
+          My technical skills include:
+          <br />
+          - Programming Languages: JavaScript, C++, C, Java, Python
+          <br />
+          - Frameworks | linrary's: React, Node.js, Express, TensorFlow, Redux
+          <br />
+          - Tools: Git, AWS - [RDS,S3,EC2,Lambda,IAM]
+          <br />
+          - Databases: MongoDB, MySQL
+          <br />
+          - Others: Agile methodologies, Test-driven development
+          <br />
+        </span>
+      )
     ),
     projects: () => (
       <span className="text-base fira">
         Here are some of my key projects:
         <br />
-        1. <b>Project A</b>: Description of Project A with key technologies
-        used.
+        1. <b>BazzarBee-[E-commerce platform]</b>
         <br />
-        2. <b>Project B</b>: Description of Project B with key technologies
-        used.
+        2. <b>RNSIT DOCS</b>
         <br />
-        3. <b>Project C</b>: Description of Project C with key technologies
-        used.
+        3. <b>Chronicle-[Blog-website]</b>
         <br />
-        For more details, visit my{" "}
-        <a href="https://github.com/yourusername">GitHub</a>.<br />
+        For more details,
+        <br /> Explore side bar or visit my{" "}
+        <a href="https://github.com/Priyanshu885588" target="_blank">
+          GitHub
+        </a>
+        .<br />
       </span>
     ),
     contact: () => (
-      <span className="text-base fira">
-        You can reach me at:
-        <br />
-        - Email: your.email@example.com
-        <br />- LinkedIn:{" "}
-        <a href="https://www.linkedin.com/in/yourprofile">
-          Your LinkedIn Profile
-        </a>
-        <br />- GitHub:{" "}
-        <a href="https://github.com/yourusername">Your GitHub Profile</a>
-        <br />
-      </span>
+      handleContacts(),
+      (
+        <span className="text-base fira">
+          You can reach me at:
+          <a href="mailto:priyanshumandani978@gmail.com"> gmail</a>
+          <br />- LinkedIn:{" "}
+          <a
+            href="https://www.linkedin.com/in/priyanshu-mandani-835553309/"
+            target="_blank"
+          >
+            click here
+          </a>
+          <br />- GitHub:{" "}
+          <a href="https://github.com/Priyanshu885588" target="_blank">
+            click here
+          </a>
+          <br />- Instagram:{" "}
+          <a href="https://www.instagram.com/priyanshu__11/" target="_blank">
+            click here
+          </a>
+          <br />
+          inte{" "}
+        </span>
+      )
     ),
     education: () => (
       <span className="text-base fira">
         My educational background:
         <br />
-        - B.Sc. in Computer Science, University Name
+        - B.E in Computer Science & Engineering, RNSIT
         <br />
         - Relevant coursework: Data Structures, Algorithms, Software
         Engineering, Machine Learning
@@ -92,11 +112,11 @@ const Terminal = () => {
         <br />
         - Traveling and exploring new cultures
         <br />
-        - Playing chess and other strategic games
-        <br />
         - Volunteering for tech education initiatives
         <br />
         - Reading books on technology and innovation
+        <br />
+        - Participating in contests and hackathons
         <br />
       </span>
     ),
@@ -109,6 +129,7 @@ const Terminal = () => {
       <br />
       Let's discuss your unique ideas! <br />
       Type "help" for all available commands. <br />
+      <br />
     </span>
   );
 
